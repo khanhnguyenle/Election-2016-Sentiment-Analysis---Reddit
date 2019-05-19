@@ -10,7 +10,7 @@
 ### This Software...
 ...performs the preprocessing of the full set of Reddit comments (approx. 300 GB of JSON data) from the time frame of
 2016-07-20 00:00:00 GMT to 2016-11-09 00:00:00 GMT, filtering out all comments that are
-either out of that time frame, or are not about either Hillary Clinton or Donald Trump.
+either out of that time frame, or are not about either Hillary Clinton or Donald Trump. Then it performs textual sentiment analysis on reddit comments determined by preprocessing to be discussing either Donald Trump, Hillary Clinton, or both, and summarizes the data.
 ### Tools and APIs Used
 * Hadoop + MapReduce
     * MRUnit (unit testing for MapReduce)
