@@ -32,19 +32,27 @@ either out of that time frame, or are not about either Hillary Clinton or Donald
 * The program can be invoked via Hadoop with the command `$HADOOP_HOME/bin/hadoop jar election16-coverage-1.0.jar columbia.FilterCommentsDriver <input_path> <output_path>`
   * Here, you are invoking `FilterCommentsDriver`
 <h3>For Drew's sentiment Analysis:</h3>
+
+```
 $ mkdir build
 $ $HADOOP_HOME/bin/hadoop com.sun.tools.javac.Main *.java -d build -Xlint
 $ jar -cvf SentimentAnalysis.jar -C build/ .
 $ rm -r build
+```
 This assumes you have all text files (ExampleInput.txt, negate-words.txt, pos-words.txt, and neg-words.txt) in /sentimentAnalysis directory in hdfs. Modify the paths to reflect any differences.
+```
 $HADOOP_HOME/bin/hadoop jar SentimentAnalysis.jar org.SentimentAnalysis.Driver /sentimentAnalysis/ExampleInput.txt /sentimentAnalysis/out -negation /sentimentAnalysis/negate-words.txt -pos /sentimentAnalysis/pos-words.txt -neg /sentimentAnalysis/neg-words.txt
+```
 As-is, it will take /sentimentAnalysis/ExampleInput.txt, run the program, and store the results in /sentimentAnalysis/out. This can be modified to a directory of input files by replacing sentimentAnalysis/ExampleInput.txt with /your-HDFS-Directory/
 <h3>To summarize data:</h3>
+
+```
 $ mkdir build
 $ $HADOOP_HOME/bin/hadoop com.sun.tools.javac.Main *.java -d build -Xlint
 $ jar -cvf SentimentAnalysis.jar -C build/ .
 $ rm -r build
 $ $HADOOP_HOME/bin/hadoop jar Summary.jar org.Summary.Driver /SentimentAnalysis/out /SentimentAnalysis/summary
+```
 
 #### Dictionary Modification
 * There are two resource files, `trump-dictionary.txt` and `hillary-dictionary.txt`
