@@ -1,4 +1,4 @@
-# Election 2016 Coverage (Preprocessing)
+# Election 2016 Sentiment Analysis - Reddit
 ###### (Part of a) Term Project for CS435 @ CSU, Spring 2018
 ###### Team Members: Andy Dolan, Drew Boston, Khanh Nguyen Le, Jacob Servaty
 
